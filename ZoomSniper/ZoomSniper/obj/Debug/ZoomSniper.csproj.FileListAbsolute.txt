@@ -1,0 +1,15 @@
+C:\Users\Domin\source\repos\ZoomSniper\ZoomSniper\bin\Debug\ZoomSniper.exe.config
+C:\Users\Domin\source\repos\ZoomSniper\ZoomSniper\bin\Debug\ZoomSniper.exe
+C:\Users\Domin\source\repos\ZoomSniper\ZoomSniper\bin\Debug\ZoomSniper.pdb
+C:\Users\Domin\source\repos\ZoomSniper\ZoomSniper\obj\Debug\ZoomSniper.csproj.AssemblyReference.cache
+C:\Users\Domin\source\repos\ZoomSniper\ZoomSniper\obj\Debug\ZoomSniper.Form1.resources
+C:\Users\Domin\source\repos\ZoomSniper\ZoomSniper\obj\Debug\ZoomSniper.Properties.Resources.resources
+C:\Users\Domin\source\repos\ZoomSniper\ZoomSniper\obj\Debug\ZoomSniper.csproj.GenerateResource.cache
+C:\Users\Domin\source\repos\ZoomSniper\ZoomSniper\obj\Debug\ZoomSniper.csproj.CoreCompileInputs.cache
+C:\Users\Domin\source\repos\ZoomSniper\ZoomSniper\obj\Debug\ZoomSniper.exe
+C:\Users\Domin\source\repos\ZoomSniper\ZoomSniper\obj\Debug\ZoomSniper.pdb
+C:\Users\Domin\source\repos\ZoomSniper\ZoomSniper\obj\Debug\ZoomSniper.Resource1.resources
+C:\Users\Domin\source\repos\ZoomSniper\ZoomSniper\bin\Debug\ZoomSniper.exe.manifest
+C:\Users\Domin\source\repos\ZoomSniper\ZoomSniper\bin\Debug\ZoomSniper.application
+C:\Users\Domin\source\repos\ZoomSniper\ZoomSniper\obj\Debug\ZoomSniper.exe.manifest
+C:\Users\Domin\source\repos\ZoomSniper\ZoomSniper\obj\Debug\ZoomSniper.application
