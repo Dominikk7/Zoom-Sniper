@@ -40,35 +40,42 @@ namespace ZoomSniper
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.adLinkBtn = new System.Windows.Forms.Button();
             this.listViewMain = new System.Windows.Forms.ListView();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.customBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.addLink = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.deleteLink = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.editBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.selectLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.downBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.upBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(185, 73);
+            this.textBox1.Location = new System.Drawing.Point(247, 90);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 20);
+            this.textBox1.Size = new System.Drawing.Size(247, 22);
             this.textBox1.TabIndex = 0;
             // 
             // Link
             // 
             this.Link.AutoSize = true;
-            this.Link.Location = new System.Drawing.Point(182, 57);
+            this.Link.Location = new System.Drawing.Point(243, 70);
+            this.Link.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Link.Name = "Link";
-            this.Link.Size = new System.Drawing.Size(27, 13);
+            this.Link.Size = new System.Drawing.Size(31, 16);
             this.Link.TabIndex = 1;
             this.Link.Text = "Link";
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(377, 77);
+            this.checkBox1.Location = new System.Drawing.Point(503, 95);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(33, 17);
+            this.checkBox1.Size = new System.Drawing.Size(38, 20);
             this.checkBox1.TabIndex = 2;
             this.checkBox1.Text = "S";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -76,9 +83,10 @@ namespace ZoomSniper
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(416, 77);
+            this.checkBox2.Location = new System.Drawing.Point(555, 95);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(35, 17);
+            this.checkBox2.Size = new System.Drawing.Size(40, 20);
             this.checkBox2.TabIndex = 3;
             this.checkBox2.Text = "M";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -86,9 +94,10 @@ namespace ZoomSniper
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(496, 77);
+            this.checkBox3.Location = new System.Drawing.Point(661, 95);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(37, 17);
+            this.checkBox3.Size = new System.Drawing.Size(42, 20);
             this.checkBox3.TabIndex = 5;
             this.checkBox3.Text = "W";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -97,9 +106,10 @@ namespace ZoomSniper
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(457, 77);
+            this.checkBox4.Location = new System.Drawing.Point(609, 95);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(33, 17);
+            this.checkBox4.Size = new System.Drawing.Size(38, 20);
             this.checkBox4.TabIndex = 4;
             this.checkBox4.Text = "T";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -107,9 +117,10 @@ namespace ZoomSniper
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(539, 77);
+            this.checkBox5.Location = new System.Drawing.Point(719, 95);
+            this.checkBox5.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(34, 17);
+            this.checkBox5.Size = new System.Drawing.Size(39, 20);
             this.checkBox5.TabIndex = 6;
             this.checkBox5.Text = "R";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -117,9 +128,10 @@ namespace ZoomSniper
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(579, 77);
+            this.checkBox6.Location = new System.Drawing.Point(772, 95);
+            this.checkBox6.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(32, 17);
+            this.checkBox6.Size = new System.Drawing.Size(37, 20);
             this.checkBox6.TabIndex = 7;
             this.checkBox6.Text = "F";
             this.checkBox6.UseVisualStyleBackColor = true;
@@ -127,9 +139,10 @@ namespace ZoomSniper
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(617, 77);
+            this.checkBox7.Location = new System.Drawing.Point(823, 95);
+            this.checkBox7.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(33, 17);
+            this.checkBox7.Size = new System.Drawing.Size(38, 20);
             this.checkBox7.TabIndex = 8;
             this.checkBox7.Text = "S";
             this.checkBox7.UseVisualStyleBackColor = true;
@@ -137,66 +150,108 @@ namespace ZoomSniper
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(656, 75);
+            this.dateTimePicker1.Location = new System.Drawing.Point(875, 92);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(104, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(137, 22);
             this.dateTimePicker1.TabIndex = 9;
-            // 
-            // adLinkBtn
-            // 
-            this.adLinkBtn.Location = new System.Drawing.Point(766, 73);
-            this.adLinkBtn.Name = "adLinkBtn";
-            this.adLinkBtn.Size = new System.Drawing.Size(75, 23);
-            this.adLinkBtn.TabIndex = 15;
-            this.adLinkBtn.Text = "Add link";
-            this.adLinkBtn.UseVisualStyleBackColor = true;
-            this.adLinkBtn.Click += new System.EventHandler(this.adLinkBtn_Click);
             // 
             // listViewMain
             // 
             this.listViewMain.HideSelection = false;
-            this.listViewMain.Location = new System.Drawing.Point(44, 163);
+            this.listViewMain.Location = new System.Drawing.Point(59, 201);
+            this.listViewMain.Margin = new System.Windows.Forms.Padding(4);
             this.listViewMain.Name = "listViewMain";
-            this.listViewMain.Size = new System.Drawing.Size(797, 403);
+            this.listViewMain.Size = new System.Drawing.Size(1061, 495);
             this.listViewMain.TabIndex = 16;
             this.listViewMain.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(44, 572);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(96, 23);
-            this.btnDelete.TabIndex = 17;
-            this.btnDelete.Text = "Delete selected";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.listViewMain.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listViewMain_ItemCheck1);
             // 
             // customBox
             // 
-            this.customBox.Location = new System.Drawing.Point(44, 73);
+            this.customBox.Location = new System.Drawing.Point(59, 90);
+            this.customBox.Margin = new System.Windows.Forms.Padding(4);
             this.customBox.Name = "customBox";
-            this.customBox.Size = new System.Drawing.Size(128, 20);
+            this.customBox.Size = new System.Drawing.Size(169, 22);
             this.customBox.TabIndex = 18;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 57);
+            this.label1.Location = new System.Drawing.Point(52, 70);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.Size = new System.Drawing.Size(103, 16);
             this.label1.TabIndex = 19;
             this.label1.Text = "Name (optional)";
             // 
+            // addLink
+            // 
+            this.addLink.Location = new System.Drawing.Point(1032, 90);
+            this.addLink.Name = "addLink";
+            this.addLink.Size = new System.Drawing.Size(101, 33);
+            this.addLink.TabIndex = 21;
+            this.addLink.Values.Text = "Add Link";
+            this.addLink.Click += new System.EventHandler(this.addLink_Click);
+            // 
+            // deleteLink
+            // 
+            this.deleteLink.Location = new System.Drawing.Point(1028, 718);
+            this.deleteLink.Name = "deleteLink";
+            this.deleteLink.Size = new System.Drawing.Size(92, 34);
+            this.deleteLink.TabIndex = 22;
+            this.deleteLink.Values.Text = "Delete";
+            this.deleteLink.Click += new System.EventHandler(this.deleteLink_Click);
+            // 
+            // editBtn
+            // 
+            this.editBtn.Location = new System.Drawing.Point(920, 718);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(92, 34);
+            this.editBtn.TabIndex = 23;
+            this.editBtn.Values.Text = "Edit";
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
+            // 
+            // selectLabel
+            // 
+            this.selectLabel.Location = new System.Drawing.Point(798, 726);
+            this.selectLabel.Name = "selectLabel";
+            this.selectLabel.Size = new System.Drawing.Size(85, 26);
+            this.selectLabel.TabIndex = 24;
+            this.selectLabel.Values.Text = "0 selected";
+            // 
+            // downBtn
+            // 
+            this.downBtn.Location = new System.Drawing.Point(122, 702);
+            this.downBtn.Name = "downBtn";
+            this.downBtn.Size = new System.Drawing.Size(57, 50);
+            this.downBtn.TabIndex = 25;
+            this.downBtn.Values.Text = "▼";
+            this.downBtn.Click += new System.EventHandler(this.downBtn_Click);
+            // 
+            // upBtn
+            // 
+            this.upBtn.Location = new System.Drawing.Point(59, 702);
+            this.upBtn.Name = "upBtn";
+            this.upBtn.Size = new System.Drawing.Size(57, 50);
+            this.upBtn.TabIndex = 26;
+            this.upBtn.Values.Text = "▲";
+            this.upBtn.Click += new System.EventHandler(this.upBtn_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 697);
+            this.ClientSize = new System.Drawing.Size(1172, 858);
+            this.Controls.Add(this.upBtn);
+            this.Controls.Add(this.downBtn);
+            this.Controls.Add(this.selectLabel);
+            this.Controls.Add(this.editBtn);
+            this.Controls.Add(this.deleteLink);
+            this.Controls.Add(this.addLink);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.customBox);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.listViewMain);
-            this.Controls.Add(this.adLinkBtn);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.checkBox7);
             this.Controls.Add(this.checkBox6);
@@ -208,6 +263,7 @@ namespace ZoomSniper
             this.Controls.Add(this.Link);
             this.Controls.Add(this.textBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Zoom Sniper";
             this.ResumeLayout(false);
@@ -229,9 +285,14 @@ namespace ZoomSniper
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button adLinkBtn;
         private System.Windows.Forms.ListView listViewMain;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox customBox;
         private System.Windows.Forms.Label label1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton addLink;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton deleteLink;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton editBtn;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel selectLabel;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton downBtn;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton upBtn;
     }
 }
 

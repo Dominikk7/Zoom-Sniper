@@ -11,10 +11,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace ZoomSniper
 {
-    public partial class Form1 : Form
+    public partial class Form1 : KryptonForm
     {
         public List<links> linkList = new List<links>();
         public static string path1 = @"%APPDATA%\ZoomSniper\";
@@ -72,12 +73,12 @@ namespace ZoomSniper
         {
             //if ((!link.StartsWith("http://", StringComparison.OrdinalIgnoreCase)) || (!link.StartsWith("https://"))) link = "http://" + link;
             //System.Windows.Forms.MessageBox.Show(link);
-            
+
             if (!link.StartsWith("http://") && !link.StartsWith("https://"))
             {
                 link = "http://" + link;
             }
-            
+
             //Process.Start("explorer", link);
             System.Diagnostics.Process.Start(link);
         }
@@ -88,11 +89,11 @@ namespace ZoomSniper
             string dayOfWeek = localDate.DayOfWeek.ToString();
             timeNow = localDate.ToString("HH:mm");
             string hour = timeNow.Substring(0, timeNow.IndexOf(":"));
-            string minute = timeNow.Substring(timeNow.IndexOf(":")+1);
+            string minute = timeNow.Substring(timeNow.IndexOf(":") + 1);
             int hourInt = Int16.Parse(hour);
             int minuteInt = Int16.Parse(minute);
 
-            
+
             //Loop though List
             foreach (links linksList in linkList)
             {
@@ -129,15 +130,15 @@ namespace ZoomSniper
                         {
                             dayMatches = dayMatchesCheck(dayOfWeek, "Friday");
                         }
-                        else if(i == 6 && !dayMatches)
+                        else if (i == 6 && !dayMatches)
                         {
                             dayMatches = dayMatchesCheck(dayOfWeek, "Saturday");
                         }
                     }
-                    
+
                     i++;
                 }
-                
+
                 //System.Windows.Forms.MessageBox.Show("hour " + hourInt + " hour link " + linksList.hour + " "+ " minute " + minuteInt + " minute link " + linksList.minute);
 
                 if (((hourInt == linksList.hour) && Math.Abs(minuteInt - linksList.minute) < 1) && dayMatches) //minute accuracy
@@ -156,8 +157,8 @@ namespace ZoomSniper
                     linksList.openCounter = 0;
                 }
 
-                
-               
+
+
             }
         }
         private bool dayMatchesCheck(string currentDay, string checkedDay)
@@ -176,22 +177,6 @@ namespace ZoomSniper
             this.dateTimePicker1.ShowUpDown = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void adLinkBtn_Click(object sender, EventArgs e)
-        {
-            //Add link to List
-            addLinkFromInput();
-            
-            //Display list onto listView
-            listToListView();
-
-            //Save data
-            SerializeListData();
-        }
 
         private void addLinkFromInput()
         {
@@ -263,8 +248,8 @@ namespace ZoomSniper
                 {
                     timeOfDay = "AM";
                 }
-                
-                if (hours > 12 )
+
+                if (hours > 12)
                 {
                     hours -= 12;
                 }
@@ -290,8 +275,10 @@ namespace ZoomSniper
                 arr[6] = checkMark(linksList.days[4]);
                 arr[7] = checkMark(linksList.days[5]);
                 arr[8] = checkMark(linksList.days[6]);
-                arr[9] = timeString; 
+                arr[9] = timeString;
                 item1 = new ListViewItem(arr);
+                
+                item1.Checked = linksList.isChecked;
 
 
 
@@ -320,30 +307,6 @@ namespace ZoomSniper
             listViewMain.Columns.Add("Time", 70);
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            //Loop though listView
-            int i = 0;
-            int j = 0;
-
-            while (i < listViewMain.Items.Count)
-            {
-                if (listViewMain.Items[i].Checked)
-                {
-                    linkList.RemoveAt(i-j); //account for index discrepancy
-                    //Amount of times deleted
-                    j++;
-                }
-                i++;
-                
-            }            
-            listToListView();
-
-            //Save data
-            SerializeListData();
-        }
-
-
         public void SerializeListData()
         {
             pathTest = Environment.ExpandEnvironmentVariables(path2);
@@ -365,9 +328,210 @@ namespace ZoomSniper
             reader.Close();
         }
 
-    }
+        private void addLink_Click(object sender, EventArgs e)
+        {
+            //Add link to List
+            addLinkFromInput();
 
-    internal class link
-    {
+            //Display list onto listView
+            listToListView();
+
+            //Save data
+            SerializeListData();
+        }
+
+        private void deleteLink_Click(object sender, EventArgs e)
+        {
+            //Loop though listView
+            int i = 0;
+            int j = 0;
+
+            while (i < listViewMain.Items.Count)
+            {
+                if (listViewMain.Items[i].Checked)
+                {
+                    linkList.RemoveAt(i - j); //account for index discrepancy
+                    //Amount of times deleted
+                    j++;
+                }
+                i++;
+
+            }
+            listToListView();
+
+            //Reset selected
+            selectLabel.Text = "0 selected";
+
+            //Save data
+            SerializeListData();
+        }
+
+        private void listViewMain_ItemCheck1(object sender, ItemCheckEventArgs e)
+        {
+            int count = 0;
+
+            //not already checked
+            if (e.CurrentValue != CheckState.Checked)
+            {
+                linkList[e.Index].isChecked = true;
+            }
+            //already checked
+            else
+            {
+                linkList[e.Index].isChecked = false;
+            }
+
+            foreach (links linksList in linkList)
+            {
+                if (linksList.isChecked)
+                {
+                    ++count;
+                }
+            }
+
+                selectLabel.Text = count + " selected";
+
+        }
+
+        private void downBtn_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            List<int> index = new List<int>();
+            List<int> uncheck = new List<int>();
+            List<int> newIndex = new List<int>();
+
+            while (i < listViewMain.Items.Count)
+            {
+                if (listViewMain.Items[i].Checked)
+                {
+                    if (i == listViewMain.Items.Count - 1)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        index.Add(i);
+                        newIndex.Add(i + 1);
+                        if (!listViewMain.Items[i + 1].Checked)
+                        {
+                            uncheck.Add(i + 1);               
+                        }
+                    }
+                }
+                i++;
+            }
+
+            for (int j = 0; j < uncheck.Count; j++)
+            {
+                bool found = true;
+                index.Add(uncheck[j]);
+                while (found)
+                {
+                    uncheck[j] -= 1;
+                    for (int k = 0; k < newIndex.Count; k++)
+                    {
+                        found = false;
+                        if (uncheck[j] == newIndex[k])
+                        {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                newIndex.Add(uncheck[j]);
+                
+            }
+
+            List<links> linkObj = new List<links>();
+
+            for (i = 0; i < index.Count; i++)
+            {
+                links temp = linkList[index[i]];
+                linkObj.Add(temp);
+            }
+
+            for(i = 0; i < linkObj.Count; i++)
+            {
+                linkList[newIndex[i]] = linkObj[i];
+            }
+            listToListView();
+
+            //Save data
+            SerializeListData();
+
+        }
+
+       
+
+        private void upBtn_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            List<int> index = new List<int>();
+            List<int> uncheck = new List<int>();
+            List<int> newIndex = new List<int>();
+
+            while (i < listViewMain.Items.Count)
+            {
+                if (listViewMain.Items[i].Checked)
+                {
+                    if (i == 0)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        index.Add(i);
+                        newIndex.Add(i - 1);
+                        if (!listViewMain.Items[i - 1].Checked)
+                        {
+                            uncheck.Add(i - 1);
+                        }
+                    }
+                }
+                i++;
+            }
+
+            for (int j = 0; j < uncheck.Count; j++)
+            {
+                bool found = true;
+                index.Add(uncheck[j]);
+                while (found)
+                {
+                    uncheck[j] += 1;
+                    for (int k = 0; k < newIndex.Count; k++)
+                    {
+                        found = false;
+                        if (uncheck[j] == newIndex[k])
+                        {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                newIndex.Add(uncheck[j]);
+
+            }
+
+            List<links> linkObj = new List<links>();
+
+            for (i = 0; i < index.Count; i++)
+            {
+                links temp = linkList[index[i]];
+                linkObj.Add(temp);
+            }
+
+            for (i = 0; i < linkObj.Count; i++)
+            {
+                linkList[newIndex[i]] = linkObj[i];
+            }
+            listToListView();
+
+            //Save data
+            SerializeListData();
+        }
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            listToListView();
+        }
     }
 }

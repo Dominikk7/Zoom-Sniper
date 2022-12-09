@@ -15,8 +15,9 @@ namespace ZoomSniper
         public int minute;
         public int openCounter = 0;
         public string name;
+        public bool isChecked = false;
 
-
+        //parameterized constructor
         public links(string link, bool[] days, int hour, int minute, string name)
         {
             this.link = link;
@@ -26,11 +27,22 @@ namespace ZoomSniper
             this.name = name;
 
         }
-
+        //default constructor
         public links()
         {
 
         }
+        //copy constructor
+        public links(links linkObj)
+        {
+            link = linkObj.link;
+            days = linkObj.days;
+            hour = linkObj.hour;
+            minute = linkObj.minute;
+            name = linkObj.name;
+            isChecked = linkObj.isChecked;
+        }
+
 
     }
 }
