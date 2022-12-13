@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZoomSniper.exe" size="31200">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZoomSniper.exe" size="33248">
       <assemblyIdentity name="ZoomSniper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>at/65lRl+64hWhHOwaxmplhlQjt+eA/RsL8PAjSitBE=</dsig:DigestValue>
+        <dsig:DigestValue>BaswLaLpvxMHoo9gf4jzJbTpmdd7Pw1Aj+/yh90Om64=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

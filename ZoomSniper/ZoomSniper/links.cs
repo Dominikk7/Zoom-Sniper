@@ -9,12 +9,12 @@ namespace ZoomSniper
     public class links
     {
 
-        public string link;
-        public bool[] days;
+        public string link { get; set; }
+        public bool[] days { get; set; }
         public int hour;
         public int minute;
         public int openCounter = 0;
-        public string name;
+        public string name { get; set; }
         public bool isChecked = false;
 
         //parameterized constructor
