@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using ComponentFactory.Krypton.Toolkit;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace ZoomSniper
 {
@@ -49,8 +50,12 @@ namespace ZoomSniper
             DeserializeListData();
 
             dateBoxInit();
-            initListView();
-            listToListView();
+
+            initGridView();
+
+            listToGridView();
+
+            updateSelected();
 
             checkAsync();
 
@@ -221,14 +226,14 @@ namespace ZoomSniper
             return "";
         }
 
-        private void listToListView()
+        private void listToGridView()
         {
-            listViewMain.Clear();
-            initListView();
 
-            //Add items in the listview
-            string[] arr = new string[10];
-            ListViewItem item1;
+            gridViewMain.Columns.Clear();
+            initGridView();
+            //Add items in the gridview
+            string[] arr = new string[11];
+            DataGridViewRow item1;
 
             //Loop though List
             foreach (links linksList in linkList)
@@ -265,46 +270,94 @@ namespace ZoomSniper
                 {
                     timeString = hours + ":" + minutes + timeOfDay;
                 }
+                arr[0] = linksList.isChecked.ToString();
+                arr[1] = linksList.name;
+                arr[2] = linksList.link;
+                arr[3] = checkMark(linksList.days[0]);
+                arr[4] = checkMark(linksList.days[1]);
+                arr[5] = checkMark(linksList.days[2]);
+                arr[6] = checkMark(linksList.days[3]);
+                arr[7] = checkMark(linksList.days[4]);
+                arr[8] = checkMark(linksList.days[5]);
+                arr[9] = checkMark(linksList.days[6]);
+                arr[10] = timeString;
 
-                arr[0] = linksList.name;
-                arr[1] = linksList.link;
-                arr[2] = checkMark(linksList.days[0]);
-                arr[3] = checkMark(linksList.days[1]);
-                arr[4] = checkMark(linksList.days[2]);
-                arr[5] = checkMark(linksList.days[3]);
-                arr[6] = checkMark(linksList.days[4]);
-                arr[7] = checkMark(linksList.days[5]);
-                arr[8] = checkMark(linksList.days[6]);
-                arr[9] = timeString;
-                item1 = new ListViewItem(arr);
-                
-                item1.Checked = linksList.isChecked;
+                gridViewMain.Rows.Add(arr);
+            
+            }
+            
+        }
+        
+        private void initTest()
+        {
+            var source = new BindingSource();
+            List<links> list = new List<links> { new links("t",null,1,1,"test2")};
+            source.DataSource = list;
+            gridViewMain.DataSource = source;
+            gridViewMain.AutoGenerateColumns = true;
+        }
+        private void initGridView()
+        {
+            //initTest();
+
+            int checkWidth = 40;
 
 
+            //gridViewMain.ReadOnly = true;
 
-                listViewMain.Items.Add(item1);
+            DataGridViewCheckBoxColumn checkCol = new DataGridViewCheckBoxColumn();
+            checkCol.ValueType = typeof(bool);
+            checkCol.Name = "Chk";
+            checkCol.HeaderText = "";
+            checkCol.Width = 25;
+            checkCol.ReadOnly = false;
+            gridViewMain.Columns.Add(checkCol);
+            
+
+            gridViewMain.ColumnCount = 11;
+            gridViewMain.RowHeadersVisible = false;
+
+            for(int i=0; i<11; i++)
+            {
+                if(i != 0)
+                {
+                    gridViewMain.Columns[i].ReadOnly = true;
+                }
+                gridViewMain.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
             }
 
+            //385
+            gridViewMain.Columns[1].Name = "Name";
+            gridViewMain.Columns[1].Width = 192;
 
-        }
+            gridViewMain.Columns[2].Name = "Link";
+            gridViewMain.Columns[2].Width = 211;
 
-        private void initListView()
-        {
-            listViewMain.View = View.Details;
-            listViewMain.CheckBoxes = true;
-            listViewMain.GridLines = true;
+            gridViewMain.Columns[3].Name = "S";
+            gridViewMain.Columns[3].Width = checkWidth;
+
+            gridViewMain.Columns[4].Name = "M";
+            gridViewMain.Columns[4].Width = checkWidth;
+
+            gridViewMain.Columns[5].Name = "T";
+            gridViewMain.Columns[5].Width = checkWidth;
+
+            gridViewMain.Columns[6].Name = "W";
+            gridViewMain.Columns[6].Width = checkWidth;
+
+            gridViewMain.Columns[7].Name = "R";
+            gridViewMain.Columns[7].Width = checkWidth;
+
+            gridViewMain.Columns[8].Name = "F";
+            gridViewMain.Columns[8].Width = checkWidth;
+
+            gridViewMain.Columns[9].Name = "S";
+            gridViewMain.Columns[9].Width = checkWidth;
+
+            gridViewMain.Columns[10].Name = "Time";
+            gridViewMain.Columns[10].Width = 80;
 
 
-            listViewMain.Columns.Add("Name", 80);
-            listViewMain.Columns.Add("Link", 80);
-            listViewMain.Columns.Add("S", 40);
-            listViewMain.Columns.Add("M", 40);
-            listViewMain.Columns.Add("T", 40);
-            listViewMain.Columns.Add("W", 40);
-            listViewMain.Columns.Add("T", 40);
-            listViewMain.Columns.Add("F", 40);
-            listViewMain.Columns.Add("S", 40);
-            listViewMain.Columns.Add("Time", 70);
         }
 
         public void SerializeListData()
@@ -334,7 +387,7 @@ namespace ZoomSniper
             addLinkFromInput();
 
             //Display list onto listView
-            listToListView();
+            listToGridView();
 
             //Save data
             SerializeListData();
@@ -343,21 +396,21 @@ namespace ZoomSniper
         private void deleteLink_Click(object sender, EventArgs e)
         {
             //Loop though listView
-            int i = 0;
-            int j = 0;
+            int i = 0;;
 
-            while (i < listViewMain.Items.Count)
+            while (i < linkList.Count())
             {
-                if (listViewMain.Items[i].Checked)
+                if (linkList[i].isChecked)
                 {
-                    linkList.RemoveAt(i - j); //account for index discrepancy
+                    linkList.RemoveAt(i);
                     //Amount of times deleted
-                    j++;
+                    i--;
+                    
                 }
                 i++;
 
             }
-            listToListView();
+            listToGridView();
 
             //Reset selected
             selectLabel.Text = "0 selected";
@@ -365,21 +418,39 @@ namespace ZoomSniper
             //Save data
             SerializeListData();
         }
+        private void gridViewMain_ItemClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //TODO if -1 check or uncheck all
+            
+            if(e.ColumnIndex == 0 && e.RowIndex != -1)
+            {
 
-        private void listViewMain_ItemCheck1(object sender, ItemCheckEventArgs e)
+                bool oldCheck = linkList[e.RowIndex].isChecked;
+
+                if (oldCheck)
+                {
+                    linkList[e.RowIndex].isChecked = false;
+                    gridViewMain.Rows[e.RowIndex].Cells[0].Value = false;
+                    //MessageBox.Show(linkList[e.RowIndex].name + " unchecked");
+                }
+                else
+                {
+                    linkList[e.RowIndex].isChecked = true;
+                    gridViewMain.Rows[e.RowIndex].Cells[0].Value = true;
+                    //MessageBox.Show(linkList[e.RowIndex].name+ " checked");
+                }
+
+                updateSelected();
+
+                gridViewMain.EndEdit();
+
+            }
+
+        }
+
+        private void updateSelected()
         {
             int count = 0;
-
-            //not already checked
-            if (e.CurrentValue != CheckState.Checked)
-            {
-                linkList[e.Index].isChecked = true;
-            }
-            //already checked
-            else
-            {
-                linkList[e.Index].isChecked = false;
-            }
 
             foreach (links linksList in linkList)
             {
@@ -389,7 +460,7 @@ namespace ZoomSniper
                 }
             }
 
-                selectLabel.Text = count + " selected";
+            selectLabel.Text = count + " selected";
 
         }
 
@@ -400,11 +471,11 @@ namespace ZoomSniper
             List<int> uncheck = new List<int>();
             List<int> newIndex = new List<int>();
 
-            while (i < listViewMain.Items.Count)
+            while (i < linkList.Count())
             {
-                if (listViewMain.Items[i].Checked)
+                if (linkList[i].isChecked)
                 {
-                    if (i == listViewMain.Items.Count - 1)
+                    if (i == linkList.Count() - 1)
                     {
                         return;
                     }
@@ -412,7 +483,7 @@ namespace ZoomSniper
                     {
                         index.Add(i);
                         newIndex.Add(i + 1);
-                        if (!listViewMain.Items[i + 1].Checked)
+                        if (!linkList[i+1].isChecked)
                         {
                             uncheck.Add(i + 1);               
                         }
@@ -454,14 +525,12 @@ namespace ZoomSniper
             {
                 linkList[newIndex[i]] = linkObj[i];
             }
-            listToListView();
+            listToGridView();
 
             //Save data
             SerializeListData();
 
         }
-
-       
 
         private void upBtn_Click(object sender, EventArgs e)
         {
@@ -470,9 +539,9 @@ namespace ZoomSniper
             List<int> uncheck = new List<int>();
             List<int> newIndex = new List<int>();
 
-            while (i < listViewMain.Items.Count)
+            while (i < linkList.Count())
             {
-                if (listViewMain.Items[i].Checked)
+                if (linkList[i].isChecked)
                 {
                     if (i == 0)
                     {
@@ -482,7 +551,7 @@ namespace ZoomSniper
                     {
                         index.Add(i);
                         newIndex.Add(i - 1);
-                        if (!listViewMain.Items[i - 1].Checked)
+                        if (!linkList[i-1].isChecked)
                         {
                             uncheck.Add(i - 1);
                         }
@@ -524,14 +593,21 @@ namespace ZoomSniper
             {
                 linkList[newIndex[i]] = linkObj[i];
             }
-            listToListView();
+            listToGridView();
 
             //Save data
             SerializeListData();
         }
         private void editBtn_Click(object sender, EventArgs e)
         {
-            listToListView();
+            listToGridView();
+            addForm();
+        }
+
+        private void addForm()
+        {
+            var addForm = new Form2(ref linkList);
+            addForm.Show();
         }
     }
 }
