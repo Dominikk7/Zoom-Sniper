@@ -317,9 +317,13 @@ namespace ZoomSniper
             gridViewMain.ColumnCount = 11;
             gridViewMain.RowHeadersVisible = false;
 
-            for(int i=1; i<11; i++)
+            for(int i=0; i<11; i++)
             {
-                gridViewMain.Columns[1].ReadOnly = true;
+                if(i != 0)
+                {
+                    gridViewMain.Columns[i].ReadOnly = true;
+                }
+                gridViewMain.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
             }
 
             //385
@@ -416,8 +420,9 @@ namespace ZoomSniper
         }
         private void gridViewMain_ItemClick(object sender, DataGridViewCellEventArgs e)
         {
+            //TODO if -1 check or uncheck all
             
-            if(e.ColumnIndex == 0)
+            if(e.ColumnIndex == 0 && e.RowIndex != -1)
             {
 
                 bool oldCheck = linkList[e.RowIndex].isChecked;
@@ -596,6 +601,13 @@ namespace ZoomSniper
         private void editBtn_Click(object sender, EventArgs e)
         {
             listToGridView();
+            addForm();
+        }
+
+        private void addForm()
+        {
+            var addForm = new Form2(ref linkList);
+            addForm.Show();
         }
     }
 }

@@ -232,6 +232,7 @@ namespace ZoomSniper
             this.gridViewMain.Location = new System.Drawing.Point(44, 139);
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.RowHeadersWidth = 10;
+            this.gridViewMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridViewMain.Size = new System.Drawing.Size(806, 403);
             this.gridViewMain.TabIndex = 27;
             this.gridViewMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewMain_ItemClick);
