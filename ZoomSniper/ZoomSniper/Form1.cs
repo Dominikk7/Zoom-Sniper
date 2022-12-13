@@ -23,10 +23,11 @@ namespace ZoomSniper
         public string path2 = @"%APPDATA%\ZoomSniper\bigData.xml";
         public string pathTest;
         public string pathDirectory;
+        public static Form1 instance;
 
         public Form1()
         {
-
+            instance = this;
             InitializeComponent();
             //Create files if needed
             pathDirectory = Environment.ExpandEnvironmentVariables(path1);
@@ -48,8 +49,6 @@ namespace ZoomSniper
                 SerializeListData();
             }
             DeserializeListData();
-
-            dateBoxInit();
 
             initGridView();
 
@@ -98,6 +97,10 @@ namespace ZoomSniper
             int hourInt = Int16.Parse(hour);
             int minuteInt = Int16.Parse(minute);
 
+            //For progress bar inticator
+            bool anyDayMatches = false;
+            double lowestTime = -1;
+            string lowestName = "";
 
             //Loop though List
             foreach (links linksList in linkList)
@@ -162,59 +165,52 @@ namespace ZoomSniper
                     linksList.openCounter = 0;
                 }
 
+                if (dayMatches)
+                {
+                    anyDayMatches = true;
+                    
+                    //Get time offset
+                    var date = DateTime.Now.Date.Add(new TimeSpan(0, 0, 0));
+                    date = date.AddHours(linksList.hour);
+                    date = date.AddMinutes(linksList.minute);
+                    var now = DateTime.Now;
+
+                    double result = date.Subtract(now).TotalMinutes;
+                    //Set valid lowest time
+                    if (result >= 0)
+                    {
+                        if(lowestTime == -1)
+                        {
+                            lowestTime = result;
+                            lowestName = linksList.name;
+                        }
+                        else if(lowestTime > result)
+                        {
+                            lowestTime = result;
+                            lowestName = linksList.name;
+                        }
+
+                    }
+                }
 
 
             }
+            //Progress bar and text
+            if (!anyDayMatches || lowestTime == -1)
+            {
+                nextLink.Text = "No more links today";
+            }
+            else
+            {
+                lowestTime = Math.Round(lowestTime, 1);
+                nextLink.Text = lowestName + ": "+lowestTime.ToString() + " minutes";
+            }
+
+
         }
         private bool dayMatchesCheck(string currentDay, string checkedDay)
         {
             return currentDay.Equals(checkedDay);
-        }
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateBoxInit()
-        {
-            this.dateTimePicker1.CustomFormat = "hh:mm tt";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.ShowUpDown = true;
-        }
-
-
-        private void addLinkFromInput()
-        {
-            //Convert checkboxes to boolean
-            bool[] days = new bool[7];
-            days[0] = checkBox1.Checked;
-            days[1] = checkBox2.Checked;
-            days[2] = checkBox4.Checked;
-            days[3] = checkBox3.Checked;
-            days[4] = checkBox5.Checked;
-            days[5] = checkBox6.Checked;
-            days[6] = checkBox7.Checked;
-
-            //Convert time to int and string
-            int hours = dateTimePicker1.Value.Hour;
-            int minutes = dateTimePicker1.Value.Minute;
-
-            //Get link
-            string link = textBox1.Text;
-
-            //Data verification
-            if (link.Length > 1)
-            {
-                //Construct link object
-                links tempLink = new links(link, days, hours, minutes, customBox.Text);
-
-                //Add to arrayList
-                linkList.Add(tempLink);
-            }
-            else
-            {
-                System.Windows.Forms.MessageBox.Show("Please enter link");
-            }
         }
 
         private string checkMark(bool b)
@@ -226,7 +222,7 @@ namespace ZoomSniper
             return "";
         }
 
-        private void listToGridView()
+        public void listToGridView()
         {
 
             gridViewMain.Columns.Clear();
@@ -303,7 +299,7 @@ namespace ZoomSniper
             int checkWidth = 40;
 
 
-            //gridViewMain.ReadOnly = true;
+            gridViewMain.ReadOnly = true;
 
             DataGridViewCheckBoxColumn checkCol = new DataGridViewCheckBoxColumn();
             checkCol.ValueType = typeof(bool);
@@ -319,10 +315,6 @@ namespace ZoomSniper
 
             for(int i=0; i<11; i++)
             {
-                if(i != 0)
-                {
-                    gridViewMain.Columns[i].ReadOnly = true;
-                }
                 gridViewMain.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
             }
 
@@ -331,7 +323,7 @@ namespace ZoomSniper
             gridViewMain.Columns[1].Width = 192;
 
             gridViewMain.Columns[2].Name = "Link";
-            gridViewMain.Columns[2].Width = 211;
+            gridViewMain.Columns[2].Width = 228; //211
 
             gridViewMain.Columns[3].Name = "S";
             gridViewMain.Columns[3].Width = checkWidth;
@@ -383,14 +375,7 @@ namespace ZoomSniper
 
         private void addLink_Click(object sender, EventArgs e)
         {
-            //Add link to List
-            addLinkFromInput();
-
-            //Display list onto listView
-            listToGridView();
-
-            //Save data
-            SerializeListData();
+            addForm(-1);
         }
 
         private void deleteLink_Click(object sender, EventArgs e)
@@ -418,9 +403,42 @@ namespace ZoomSniper
             //Save data
             SerializeListData();
         }
+
+        private void gridViewMain_DoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Open link on double click
+            if(e.RowIndex != -1 && e.ColumnIndex != 0)
+            {
+                openLink(linkList[e.RowIndex].link);
+            }
+        }
         private void gridViewMain_ItemClick(object sender, DataGridViewCellEventArgs e)
         {
-            //TODO if -1 check or uncheck all
+            //Check or uncheck all
+            if(e.RowIndex == -1 && e.ColumnIndex == 0)
+            {
+                //if any checked -> unckeck all
+                bool anyChecked = false;
+                foreach(links row in linkList)
+                {
+                    if (row.isChecked)
+                    {
+                        anyChecked = true;
+                        row.isChecked = false;
+                    }
+                }
+                //else check all
+                if (!anyChecked)
+                {
+                    foreach (links row in linkList)
+                    {
+                        row.isChecked = true;
+                    }
+                }
+
+                listToGridView();
+
+            }
             
             if(e.ColumnIndex == 0 && e.RowIndex != -1)
             {
@@ -440,15 +458,15 @@ namespace ZoomSniper
                     //MessageBox.Show(linkList[e.RowIndex].name+ " checked");
                 }
 
-                updateSelected();
 
                 gridViewMain.EndEdit();
 
             }
+            updateSelected();
 
         }
 
-        private void updateSelected()
+        public void updateSelected()
         {
             int count = 0;
 
@@ -600,14 +618,26 @@ namespace ZoomSniper
         }
         private void editBtn_Click(object sender, EventArgs e)
         {
-            listToGridView();
-            addForm();
+            int i = 0;
+            foreach(links link in linkList)
+            {
+                if (link.isChecked)
+                {
+                    addForm(i);
+                }
+                i++;
+            }
         }
 
-        private void addForm()
+        private void addForm(int index)
         {
-            var addForm = new Form2(ref linkList);
+            var addForm = new Form2(ref linkList, index);
             addForm.Show();
+        }
+
+        private void selectLabel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
