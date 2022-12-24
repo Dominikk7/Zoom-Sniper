@@ -105,11 +105,11 @@ namespace ZoomSniper
         private void saveBtn_Click(object sender, EventArgs e)
         {
             bool success = addLinkFromInput();
-            Form1.instance.listToGridView();
+            Form1.instance.gridManager.listToGridView();
             if (success)
             {
                 //Save after adding
-                Form1.instance.SerializeListData();
+                Form1.instance.saveManager.SerializeListData(ref linkList);
                 Form1.instance.updateSelected();
 
                 //Close

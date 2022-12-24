@@ -92,7 +92,6 @@ namespace ZoomSniper
             this.selectLabel.Size = new System.Drawing.Size(106, 23);
             this.selectLabel.TabIndex = 24;
             this.selectLabel.Values.Text = "0 selected";
-            this.selectLabel.Paint += new System.Windows.Forms.PaintEventHandler(this.selectLabel_Paint);
             // 
             // downBtn
             // 
@@ -136,12 +135,13 @@ namespace ZoomSniper
             this.gridViewMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridViewMain.Size = new System.Drawing.Size(1075, 496);
             this.gridViewMain.TabIndex = 27;
-            this.gridViewMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewMain_ItemClick);
             this.gridViewMain.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewMain_DoubleClick);
+            this.gridViewMain.SelectionChanged += new System.EventHandler(this.gridViewMain_SelectChange);
             // 
             // nextLink
             // 
-            this.nextLink.Location = new System.Drawing.Point(456, 605);
+            this.nextLink.AllowDrop = true;
+            this.nextLink.Location = new System.Drawing.Point(417, 605);
             this.nextLink.Name = "nextLink";
             this.nextLink.Palette = this.kryptonPalette1;
             this.nextLink.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
@@ -156,6 +156,7 @@ namespace ZoomSniper
             this.kryptonPalette1.ButtonStyles.ButtonCustom1.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(203)))), ((int)(((byte)(97)))));
             this.kryptonPalette1.ButtonStyles.ButtonCustom1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(203)))), ((int)(((byte)(97)))));
             this.kryptonPalette1.ButtonStyles.ButtonCustom1.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(203)))), ((int)(((byte)(97)))));
+            this.kryptonPalette1.ButtonStyles.ButtonCustom1.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Sigma;
             this.kryptonPalette1.ButtonStyles.ButtonCustom1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));

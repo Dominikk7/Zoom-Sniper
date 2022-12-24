@@ -68,3 +68,4 @@ C:\Users\Domin\OneDrive\Documents\GitHub\Zoom-Sniper\ZoomSniper\ZoomSniper\obj\D
 C:\Users\Domin\OneDrive\Documents\GitHub\Zoom-Sniper\ZoomSniper\ZoomSniper\obj\Debug\ZoomSniper.exe
 C:\Users\Domin\OneDrive\Documents\GitHub\Zoom-Sniper\ZoomSniper\ZoomSniper\obj\Debug\ZoomSniper.pdb
 C:\Users\aszti\OneDrive\Documents\GitHub\Zoom-Sniper\ZoomSniper\ZoomSniper\obj\Debug\ZoomSniper.Form2.resources
+C:\Users\Domin\OneDrive\Documents\GitHub\Zoom-Sniper\ZoomSniper\ZoomSniper\obj\Debug\ZoomSniper.Form2.resources
