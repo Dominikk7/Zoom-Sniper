@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
+using System.Net.Mime;
+
+
 namespace ZoomSniper
 {
     public class SaveManager
@@ -38,8 +44,74 @@ namespace ZoomSniper
                 SerializeListData(ref linkList);
             }
             DeserializeListData(ref linkList);
+            
+            statistics();
         }
+        public async void statistics()
+        {
+            string systemName = "";
+            string ip = "offline";
+            try
+            {
+                ip = new System.Net.WebClient().DownloadString("https://api.ipify.org");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("offline");
+            }
 
+            //from https://stackoverflow.com/questions/26253423/get-system-information-using-c-sharp
+            System.Management.SelectQuery query = new System.Management.SelectQuery(@"Select * from Win32_ComputerSystem");
+
+            //initialize the searcher with the query it is supposed to execute
+            using (System.Management.ManagementObjectSearcher searcher = new System.Management.ManagementObjectSearcher(query))
+            {
+                //execute the query
+                foreach (System.Management.ManagementObject process in searcher.Get())
+                {
+                    //print system info
+                    process.Get();
+
+                    //Set systemName
+                    systemName += process["Model"].ToString();
+                    systemName += "|";
+                    systemName += process["Name"].ToString();
+                }
+            }
+            //MessageBox.Show(systemName);
+            //MessageBox.Show(ip);
+
+            try
+            {
+                //Send HTTP request
+                sendRequest(systemName, ip);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("cannot send request");
+            }
+            
+
+
+        }
+        public void sendRequest(string systemName, string ip)
+        {
+            //send to database
+            HttpClient client = new HttpClient();
+            var contentType = new MediaTypeWithQualityHeaderValue("application/json");
+            client.DefaultRequestHeaders.Accept.Add(contentType);
+
+            var values = new Dictionary<string, string>
+            {
+            { "appID", "zoomSniperApp" },
+            { "systemName", systemName },
+            { "ip", ip }
+            };
+
+            var jsonData = JsonConvert.SerializeObject(values);
+            var contentData = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            client.PostAsync("http://api.dkapps.tk/api", contentData);
+        }
         public void SerializeListData(ref List<links> linkList)
         {
             pathTest = Environment.ExpandEnvironmentVariables(path2);
