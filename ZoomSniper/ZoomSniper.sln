@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31613.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZoomSniper", "ZoomSniper\ZoomSniper.csproj", "{157D70CB-F00E-4AE4-950B-9BDEACD20574}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ZoomSetup", "ZoomSetup\ZoomSetup.vdproj", "{88610A3F-D2BB-4F7A-9ED4-55B56B0AC293}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,11 +17,17 @@ Global
 		{157D70CB-F00E-4AE4-950B-9BDEACD20574}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{157D70CB-F00E-4AE4-950B-9BDEACD20574}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{157D70CB-F00E-4AE4-950B-9BDEACD20574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88610A3F-D2BB-4F7A-9ED4-55B56B0AC293}.Debug|Any CPU.ActiveCfg = Debug
+		{88610A3F-D2BB-4F7A-9ED4-55B56B0AC293}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {600CD50D-F93F-4018-AF5B-C6ACDF00B818}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 EndGlobal

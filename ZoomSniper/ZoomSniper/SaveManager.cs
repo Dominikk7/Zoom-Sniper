@@ -11,7 +11,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using System.Net.Mime;
-
+using System.Reflection;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace ZoomSniper
 {
@@ -22,7 +23,7 @@ namespace ZoomSniper
         public string pathTest;
         public string pathDirectory;
 
-        public void appStarup(ref List<links> linkList)
+        public void appStarup(ref List<links> linkList, ref KryptonButton updateBtn)
         {
             //Create files if needed
             pathDirectory = Environment.ExpandEnvironmentVariables(path1);
@@ -45,7 +46,58 @@ namespace ZoomSniper
             }
             DeserializeListData(ref linkList);
             
-            statistics();
+            //statistics();
+
+            checkUpdate(ref updateBtn);
+        }
+        
+        public void checkUpdate(ref KryptonButton updateBtn)
+        {
+            //Get local version
+            string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            string[] versionArr = version.Split('.');
+            int majorVersion = Int16.Parse(versionArr[0]);
+            int minorVersion = Int16.Parse(versionArr[1]);
+            int buildVersion = Int16.Parse(versionArr[2]);
+
+
+            //Get online version 
+            string latestVersion = "0.0.0"; //temp in case of no connection
+            latestVersion = new System.Net.WebClient().DownloadString("https://download.dkapps.tk/Versions/ZoomSniper.txt");
+            versionArr = latestVersion.Split('.');
+            int majorVersionL = Int16.Parse(versionArr[0]);
+            int minorVersionL = Int16.Parse(versionArr[1]);
+            int buildVersionL = Int16.Parse(versionArr[2]);
+
+            //Compare versions
+            bool update = false;
+            if(majorVersionL > majorVersion)
+            {
+                //update
+                update = true;
+            }
+            else if(minorVersionL > minorVersion && majorVersionL == majorVersion)
+            {
+                //update
+                update = true;
+            }
+            else if(buildVersionL > buildVersion && majorVersionL == majorVersion && minorVersionL== minorVersion)
+            {
+                //update
+                update = true;
+            }
+
+            if (update)
+            {
+                //Set update button
+                string updateUrl = "https://download.dkapps.tk/Downloads/ZoomSetup"+ latestVersion + ".msi";
+                updateBtn.AccessibleDescription = updateUrl;
+                updateBtn.Visible = true;
+            }
+
+
+            //MessageBox.Show("Version:  );
+
         }
         public async void statistics()
         {

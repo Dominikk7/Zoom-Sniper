@@ -34,7 +34,7 @@ namespace ZoomSniper
             InitializeComponent();
 
             //Load app data
-            saveManager.appStarup(ref linkList);
+            saveManager.appStarup(ref linkList, ref updateBtn);
 
             //Start grid view
             gridManager.appStarup(ref linkList, ref gridViewMain);
@@ -277,6 +277,11 @@ namespace ZoomSniper
         {
             var addForm = new Form2(ref linkList, index);
             addForm.Show();
+        }
+
+        private void updateBtn_Click(object sender, EventArgs e)
+        {
+            LinkUtils.openLink(updateBtn.AccessibleDescription);
         }
     }
 }

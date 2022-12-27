@@ -122,5 +122,10 @@ namespace ZoomSniper
         {
             this.Close();
         }
+
+        private void nameLabel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
