@@ -319,7 +319,6 @@
             this.Controls.Add(this.linkBox);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.nameBox);
-            this.Enabled = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(995, 212);

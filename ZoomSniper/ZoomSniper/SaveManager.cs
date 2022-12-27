@@ -46,7 +46,7 @@ namespace ZoomSniper
             }
             DeserializeListData(ref linkList);
             
-            //statistics();
+            statistics();
 
             checkUpdate(ref updateBtn);
         }
@@ -55,6 +55,9 @@ namespace ZoomSniper
         {
             //Get local version
             string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
+            string fileVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
             string[] versionArr = version.Split('.');
             int majorVersion = Int16.Parse(versionArr[0]);
             int minorVersion = Int16.Parse(versionArr[1]);

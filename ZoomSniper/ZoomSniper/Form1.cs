@@ -282,6 +282,7 @@ namespace ZoomSniper
         private void updateBtn_Click(object sender, EventArgs e)
         {
             LinkUtils.openLink(updateBtn.AccessibleDescription);
+            Application.Exit();
         }
     }
 }
