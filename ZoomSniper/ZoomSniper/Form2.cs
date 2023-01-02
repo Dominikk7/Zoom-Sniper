@@ -15,6 +15,7 @@ namespace ZoomSniper
     {
         List<links> linkList;
         int index = -1;
+
         public Form2(ref List<links> linkList, int index)
         {
             InitializeComponent();
@@ -123,9 +124,23 @@ namespace ZoomSniper
             this.Close();
         }
 
+
         private void nameLabel_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+
+        private void Form2_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            //Enable form1 when it is only window
+            int form2Count = Application.OpenForms.OfType<Form2>().Count();
+            if(form2Count == 1)
+            {
+                Form1.instance.Enabled = true;
+            }
+
+        }
+
     }
 }

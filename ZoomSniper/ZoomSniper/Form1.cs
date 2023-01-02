@@ -277,6 +277,9 @@ namespace ZoomSniper
         {
             var addForm = new Form2(ref linkList, index);
             addForm.Show();
+
+            //Disable form with new one open
+            this.Enabled = false;
         }
 
         private void updateBtn_Click(object sender, EventArgs e)

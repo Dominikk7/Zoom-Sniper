@@ -165,7 +165,7 @@
         "DisplayName" = "8:Debug"
         "IsDebugOnly" = "11:TRUE"
         "IsReleaseOnly" = "11:FALSE"
-        "OutputFilename" = "8:Debug\\ZoomSetup2.0.0.msi"
+        "OutputFilename" = "8:Debug\\ZoomSetup2.0.1.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -187,7 +187,7 @@
                     "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
                     {
                     "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
-                    "ProductCode" = "8:{77B1362D-8062-4118-846C-8DEF6D56B68E}"
+                    "ProductCode" = "8:{0E140533-6281-47CC-BB08-B4C371B92EFE}"
                     }
                 }
             }
@@ -197,7 +197,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Debug\\ZoomSetup2.0.0.msi"
+        "OutputFilename" = "8:Debug\\ZoomSetup2.0.1.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -537,7 +537,7 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ZoomSetup"
-        "ProductCode" = "8:{77B1362D-8062-4118-846C-8DEF6D56B68E}"
+        "ProductCode" = "8:{0E140533-6281-47CC-BB08-B4C371B92EFE}"
         "PackageCode" = "8:{39B42890-47F5-4D8F-87B5-D1F7FA91926A}"
         "UpgradeCode" = "8:{6795EDC1-C2B7-412A-9C06-28E9CF664F6C}"
         "AspNetVersion" = "8:2.0.50727.0"
@@ -545,7 +545,7 @@
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:2.0.0"
+        "ProductVersion" = "8:2.0.1"
         "Manufacturer" = "8:dkapps"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

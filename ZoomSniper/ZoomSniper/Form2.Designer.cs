@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.nameBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -333,6 +334,8 @@
             this.PerformLayout();
 
         }
+
+
 
         #endregion
 

@@ -46,9 +46,16 @@ namespace ZoomSniper
             }
             DeserializeListData(ref linkList);
             
-            statistics();
-
-            checkUpdate(ref updateBtn);
+            
+            try
+            {
+                statistics();
+                checkUpdate(ref updateBtn);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Cannot check for update");
+            }
         }
         
         public void checkUpdate(ref KryptonButton updateBtn)
@@ -113,6 +120,7 @@ namespace ZoomSniper
             catch (Exception ex)
             {
                 Console.WriteLine("offline");
+                return;
             }
 
             //from https://stackoverflow.com/questions/26253423/get-system-information-using-c-sharp
