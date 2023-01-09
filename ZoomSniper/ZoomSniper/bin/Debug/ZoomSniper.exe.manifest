@@ -115,24 +115,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZoomSniper.exe" size="55776">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZoomSniper.exe" size="267744">
       <assemblyIdentity name="ZoomSniper" version="2.0.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1KIevZW4z2eiPCM+RIc164aED1nScoivKsdROAiJ74U=</dsig:DigestValue>
+        <dsig:DigestValue>MrhBJJiomb/woE8MM+z+b+3Sn73PnhhWjXOu24yf1B8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Logic_Xor_Symbol_clip_art_hight.ico" size="4286">
+  <file name="Logic_Xor_Symbol_clip_art_hight.ico" size="110305">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>4i9VYI6rK3kTVtRVl4uXwC5PDl9PCQMTvmKoL+ORBlc=</dsig:DigestValue>
+      <dsig:DigestValue>GyU/5Etl6lKF/gD6t7XcBBncL/Y90/4qA1UD6VDZ1jw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="ZoomSniper.exe.config" size="187">

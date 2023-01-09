@@ -47,12 +47,12 @@ namespace ZoomSniper
             // addLink
             // 
             this.addLink.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Custom1;
-            this.addLink.Location = new System.Drawing.Point(1017, 37);
-            this.addLink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addLink.Location = new System.Drawing.Point(763, 30);
+            this.addLink.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addLink.Name = "addLink";
             this.addLink.Palette = this.kryptonPalette1;
             this.addLink.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.addLink.Size = new System.Drawing.Size(117, 44);
+            this.addLink.Size = new System.Drawing.Size(88, 36);
             this.addLink.TabIndex = 21;
             this.addLink.Values.Text = "Add Link";
             this.addLink.Click += new System.EventHandler(this.addLink_Click);
@@ -141,12 +141,12 @@ namespace ZoomSniper
             // deleteLink
             // 
             this.deleteLink.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Custom1;
-            this.deleteLink.Location = new System.Drawing.Point(1042, 598);
-            this.deleteLink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deleteLink.Location = new System.Drawing.Point(782, 486);
+            this.deleteLink.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.deleteLink.Name = "deleteLink";
             this.deleteLink.Palette = this.kryptonPalette1;
             this.deleteLink.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.deleteLink.Size = new System.Drawing.Size(92, 34);
+            this.deleteLink.Size = new System.Drawing.Size(69, 28);
             this.deleteLink.TabIndex = 22;
             this.deleteLink.Values.Text = "Delete";
             this.deleteLink.Click += new System.EventHandler(this.deleteLink_Click);
@@ -154,36 +154,36 @@ namespace ZoomSniper
             // editBtn
             // 
             this.editBtn.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Custom1;
-            this.editBtn.Location = new System.Drawing.Point(944, 598);
-            this.editBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.editBtn.Location = new System.Drawing.Point(708, 486);
+            this.editBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.editBtn.Name = "editBtn";
             this.editBtn.Palette = this.kryptonPalette1;
             this.editBtn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.editBtn.Size = new System.Drawing.Size(92, 34);
+            this.editBtn.Size = new System.Drawing.Size(69, 28);
             this.editBtn.TabIndex = 23;
             this.editBtn.Values.Text = "Edit";
             this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
             // selectLabel
             // 
-            this.selectLabel.Location = new System.Drawing.Point(817, 605);
-            this.selectLabel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.selectLabel.Location = new System.Drawing.Point(613, 492);
+            this.selectLabel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.selectLabel.Name = "selectLabel";
             this.selectLabel.Palette = this.kryptonPalette1;
             this.selectLabel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.selectLabel.Size = new System.Drawing.Size(106, 23);
+            this.selectLabel.Size = new System.Drawing.Size(86, 19);
             this.selectLabel.TabIndex = 24;
             this.selectLabel.Values.Text = "0 selected";
             // 
             // downBtn
             // 
             this.downBtn.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Custom1;
-            this.downBtn.Location = new System.Drawing.Point(109, 592);
-            this.downBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.downBtn.Location = new System.Drawing.Point(82, 481);
+            this.downBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.downBtn.Name = "downBtn";
             this.downBtn.Palette = this.kryptonPalette1;
             this.downBtn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.downBtn.Size = new System.Drawing.Size(44, 44);
+            this.downBtn.Size = new System.Drawing.Size(33, 36);
             this.downBtn.TabIndex = 25;
             this.downBtn.Values.Text = "▼";
             this.downBtn.Click += new System.EventHandler(this.downBtn_Click);
@@ -191,12 +191,12 @@ namespace ZoomSniper
             // upBtn
             // 
             this.upBtn.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Custom1;
-            this.upBtn.Location = new System.Drawing.Point(59, 592);
-            this.upBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.upBtn.Location = new System.Drawing.Point(44, 481);
+            this.upBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.upBtn.Name = "upBtn";
             this.upBtn.Palette = this.kryptonPalette1;
             this.upBtn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.upBtn.Size = new System.Drawing.Size(44, 44);
+            this.upBtn.Size = new System.Drawing.Size(33, 36);
             this.upBtn.TabIndex = 26;
             this.upBtn.Values.Text = "▲";
             this.upBtn.Click += new System.EventHandler(this.upBtn_Click);
@@ -208,14 +208,13 @@ namespace ZoomSniper
             this.gridViewMain.AllowUserToResizeColumns = false;
             this.gridViewMain.AllowUserToResizeRows = false;
             this.gridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridViewMain.Location = new System.Drawing.Point(59, 87);
-            this.gridViewMain.Margin = new System.Windows.Forms.Padding(4);
+            this.gridViewMain.Location = new System.Drawing.Point(44, 71);
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.Palette = this.kryptonPalette1;
             this.gridViewMain.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.gridViewMain.RowHeadersWidth = 10;
             this.gridViewMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridViewMain.Size = new System.Drawing.Size(1075, 496);
+            this.gridViewMain.Size = new System.Drawing.Size(806, 403);
             this.gridViewMain.TabIndex = 27;
             this.gridViewMain.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewMain_DoubleClick);
             this.gridViewMain.SelectionChanged += new System.EventHandler(this.gridViewMain_SelectChange);
@@ -223,23 +222,24 @@ namespace ZoomSniper
             // nextLink
             // 
             this.nextLink.AllowDrop = true;
-            this.nextLink.Location = new System.Drawing.Point(417, 605);
+            this.nextLink.Location = new System.Drawing.Point(313, 492);
+            this.nextLink.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nextLink.Name = "nextLink";
             this.nextLink.Palette = this.kryptonPalette1;
             this.nextLink.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.nextLink.Size = new System.Drawing.Size(191, 23);
+            this.nextLink.Size = new System.Drawing.Size(154, 19);
             this.nextLink.TabIndex = 29;
             this.nextLink.Values.Text = "No more links today";
             // 
             // updateBtn
             // 
             this.updateBtn.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Custom1;
-            this.updateBtn.Location = new System.Drawing.Point(59, 37);
-            this.updateBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.updateBtn.Location = new System.Drawing.Point(44, 30);
+            this.updateBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Palette = this.kryptonPalette1;
             this.updateBtn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.updateBtn.Size = new System.Drawing.Size(205, 44);
+            this.updateBtn.Size = new System.Drawing.Size(154, 36);
             this.updateBtn.StateCommon.Back.Color1 = System.Drawing.Color.LightSkyBlue;
             this.updateBtn.StateCommon.Back.Color2 = System.Drawing.Color.LightSkyBlue;
             this.updateBtn.StateNormal.Back.Color1 = System.Drawing.Color.DodgerBlue;
@@ -253,11 +253,11 @@ namespace ZoomSniper
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1203, 675);
+            this.ClientSize = new System.Drawing.Size(904, 555);
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.nextLink);
             this.Controls.Add(this.gridViewMain);
@@ -268,10 +268,9 @@ namespace ZoomSniper
             this.Controls.Add(this.deleteLink);
             this.Controls.Add(this.addLink);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1221, 722);
-            this.MinimumSize = new System.Drawing.Size(1221, 722);
+            this.MaximumSize = new System.Drawing.Size(920, 594);
+            this.MinimumSize = new System.Drawing.Size(920, 594);
             this.Name = "Form1";
             this.Palette = this.kryptonPalette1;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;

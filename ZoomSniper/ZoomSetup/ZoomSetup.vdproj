@@ -39,6 +39,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_65C6AFB96BA14C49966EA4DDE1957356"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_888F9C22BC9CB37D8505ADBA633414F4"
         "OwnerKey" = "8:_4AA2E5BF880836D63A37997089058694"
         "MsmSig" = "8:_UNDEFINED"
@@ -112,12 +118,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DA854DDFBAC15F81CA4F1A578438DC79"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_0DF37300C77745829CE2D097BF893B53"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -157,6 +157,12 @@
         "OwnerKey" = "8:_24430E2B3008E2181321C07BBE489CA1"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_DA854DDFBAC15F81CA4F1A578438DC79"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -184,7 +190,7 @@
             "ComponentsUrl" = "8:"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:{0E140533-6281-47CC-BB08-B4C371B92EFE}"
                     {
                     "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
                     "ProductCode" = "8:{0E140533-6281-47CC-BB08-B4C371B92EFE}"
@@ -214,6 +220,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -310,6 +324,26 @@
             {
             "SourcePath" = "8:..\\ZoomSniper\\Logic_Xor_Symbol_clip_art_hight.ico"
             "TargetName" = "8:Logic_Xor_Symbol_clip_art_hight.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_7F3138E2923347B3857A55848B29ED73"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_65C6AFB96BA14C49966EA4DDE1957356"
+            {
+            "SourcePath" = "8:..\\ZoomSniper\\controlPanel.ico"
+            "TargetName" = "8:controlPanel.ico"
             "Tag" = "8:"
             "Folder" = "8:_7F3138E2923347B3857A55848B29ED73"
             "Condition" = "8:"
@@ -536,9 +570,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:ZoomSetup"
+        "ProductName" = "8:Zoom Sniper"
         "ProductCode" = "8:{0E140533-6281-47CC-BB08-B4C371B92EFE}"
-        "PackageCode" = "8:{39B42890-47F5-4D8F-87B5-D1F7FA91926A}"
+        "PackageCode" = "8:{934BD093-DD9C-4B97-B286-E11AE99E92B9}"
         "UpgradeCode" = "8:{6795EDC1-C2B7-412A-9C06-28E9CF664F6C}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -549,13 +583,13 @@
         "Manufacturer" = "8:dkapps"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:ZoomSetup"
+        "Title" = "8:Zoom Sniper"
         "Subject" = "8:"
         "ARPCONTACT" = "8:"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:_61B1283525C3422598B2E6611645CD65"
+        "ARPPRODUCTICON" = "8:_65C6AFB96BA14C49966EA4DDE1957356"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
