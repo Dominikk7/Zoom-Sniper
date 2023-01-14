@@ -171,7 +171,7 @@
         "DisplayName" = "8:Debug"
         "IsDebugOnly" = "11:TRUE"
         "IsReleaseOnly" = "11:FALSE"
-        "OutputFilename" = "8:Debug\\ZoomSetup2.0.2.msi"
+        "OutputFilename" = "8:Debug\\ZoomSetup2.0.3.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -193,7 +193,7 @@
                     "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:{0E140533-6281-47CC-BB08-B4C371B92EFE}"
                     {
                     "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
-                    "ProductCode" = "8:{6D1270AD-0DFD-42AA-B12B-F363DEE839A5}"
+                    "ProductCode" = "8:{08467071-B509-4892-A0FA-845F756619DE}"
                     }
                 }
             }
@@ -203,7 +203,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Debug\\ZoomSetup2.0.2.msi"
+        "OutputFilename" = "8:Debug\\ZoomSetup2.0.3.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -225,7 +225,7 @@
                     "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
                     {
                     "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
-                    "ProductCode" = "8:{6D1270AD-0DFD-42AA-B12B-F363DEE839A5}"
+                    "ProductCode" = "8:{08467071-B509-4892-A0FA-845F756619DE}"
                     }
                 }
             }
@@ -571,7 +571,7 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Zoom Sniper"
-        "ProductCode" = "8:{6D1270AD-0DFD-42AA-B12B-F363DEE839A5}"
+        "ProductCode" = "8:{08467071-B509-4892-A0FA-845F756619DE}"
         "PackageCode" = "8:{934BD093-DD9C-4B97-B286-E11AE99E92B9}"
         "UpgradeCode" = "8:{6795EDC1-C2B7-412A-9C06-28E9CF664F6C}"
         "AspNetVersion" = "8:2.0.50727.0"
@@ -579,7 +579,7 @@
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:2.0.2"
+        "ProductVersion" = "8:2.0.3"
         "Manufacturer" = "8:dkapps"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

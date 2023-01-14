@@ -73,7 +73,7 @@ namespace ZoomSniper
 
             //Get online version 
             string latestVersion = "0.0.0"; //temp in case of no connection
-            latestVersion = new System.Net.WebClient().DownloadString("https://download.dkapps.tk/Versions/ZoomSniper.txt");
+            latestVersion = new System.Net.WebClient().DownloadString("https://download.sourcehex.com/Versions/ZoomSniper.txt");
             versionArr = latestVersion.Split('.');
             int majorVersionL = Int16.Parse(versionArr[0]);
             int minorVersionL = Int16.Parse(versionArr[1]);
@@ -100,7 +100,7 @@ namespace ZoomSniper
             if (update)
             {
                 //Set update button
-                string updateUrl = "https://download.dkapps.tk/Downloads/ZoomSetup"+ latestVersion + ".msi";
+                string updateUrl = "https://download.sourcehex.com/Downloads/ZoomSetup" + latestVersion + ".msi";
                 updateBtn.AccessibleDescription = updateUrl;
                 updateBtn.Visible = true;
             }
@@ -173,7 +173,7 @@ namespace ZoomSniper
 
             var jsonData = JsonConvert.SerializeObject(values);
             var contentData = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            client.PostAsync("http://api.dkapps.tk/api", contentData);
+            client.PostAsync("http://api.sourcehex.com/api", contentData);
         }
         public void SerializeListData(ref List<links> linkList)
         {
