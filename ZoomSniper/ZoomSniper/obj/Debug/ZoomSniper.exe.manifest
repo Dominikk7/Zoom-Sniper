@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Logic_Xor_Symbol_clip_art_hight.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="ZoomSniper" version="2.0.3.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="ZoomSniper" version="2.0.4.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="ZoomSniper.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -116,13 +116,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZoomSniper.exe" size="372704">
-      <assemblyIdentity name="ZoomSniper" version="2.0.3.0" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="ZoomSniper" version="2.0.4.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZVsTajsItBp5s1AFcYl/MZNx9nRzqFBy8qQ5iw1XMzg=</dsig:DigestValue>
+        <dsig:DigestValue>Q+RSwGwmVbQ3bAteG0KRxrMkVcMcnQF5DD4h7vohmaY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

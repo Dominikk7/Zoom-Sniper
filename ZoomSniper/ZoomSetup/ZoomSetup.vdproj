@@ -171,7 +171,7 @@
         "DisplayName" = "8:Debug"
         "IsDebugOnly" = "11:TRUE"
         "IsReleaseOnly" = "11:FALSE"
-        "OutputFilename" = "8:Debug\\ZoomSetup2.0.3.msi"
+        "OutputFilename" = "8:Debug\\ZoomSetup2.0.4.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -190,10 +190,10 @@
             "ComponentsUrl" = "8:"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:{0E140533-6281-47CC-BB08-B4C371B92EFE}"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:{08467071-B509-4892-A0FA-845F756619DE}"
                     {
                     "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
-                    "ProductCode" = "8:{08467071-B509-4892-A0FA-845F756619DE}"
+                    "ProductCode" = "8:{C80CD74B-4ACF-425B-BF0C-1C393B07D2C3}"
                     }
                 }
             }
@@ -203,7 +203,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Debug\\ZoomSetup2.0.3.msi"
+        "OutputFilename" = "8:Debug\\ZoomSetup2.0.4.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -222,10 +222,10 @@
             "ComponentsUrl" = "8:"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:{08467071-B509-4892-A0FA-845F756619DE}"
                     {
                     "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
-                    "ProductCode" = "8:{08467071-B509-4892-A0FA-845F756619DE}"
+                    "ProductCode" = "8:{C80CD74B-4ACF-425B-BF0C-1C393B07D2C3}"
                     }
                 }
             }
@@ -571,7 +571,7 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Zoom Sniper"
-        "ProductCode" = "8:{08467071-B509-4892-A0FA-845F756619DE}"
+        "ProductCode" = "8:{C80CD74B-4ACF-425B-BF0C-1C393B07D2C3}"
         "PackageCode" = "8:{934BD093-DD9C-4B97-B286-E11AE99E92B9}"
         "UpgradeCode" = "8:{6795EDC1-C2B7-412A-9C06-28E9CF664F6C}"
         "AspNetVersion" = "8:2.0.50727.0"
@@ -579,16 +579,16 @@
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:2.0.3"
-        "Manufacturer" = "8:dkapps"
+        "ProductVersion" = "8:2.0.4"
+        "Manufacturer" = "8:sourcehex"
         "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:"
+        "ARPHELPLINK" = "8:zoom.sourcehex.com"
         "Title" = "8:Zoom Sniper"
         "Subject" = "8:"
         "ARPCONTACT" = "8:"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
-        "ARPURLINFOABOUT" = "8:"
+        "ARPURLINFOABOUT" = "8:zoom.sourcehex.com"
         "ARPPRODUCTICON" = "8:_65C6AFB96BA14C49966EA4DDE1957356"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
