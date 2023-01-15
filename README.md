@@ -1,5 +1,5 @@
 # Zoom-Sniper
-Try it here: zoom.dkapps.tk
+Try it here: zoom.sourcehex.com
 
 Discord: Dominikk7#9785
 
